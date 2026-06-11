@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Techimpossible Security Inc. — Colors & Type
+   Source of truth for brand primitives + semantic tokens.
+
+   FONT NOTE: This file defines base font stacks (Open Sans, Libre Baskerville,
+   Montserrat, JetBrains Mono). The file fonts-upgrade.css OVERRIDES these with
+   the production editorial font stack (Inter Tight, Schibsted Grotesk, Fraunces,
+   Instrument Serif). Always import fonts-upgrade.css after this file.
+   ========================================================================== */
+
+/* fonts.css is loaded directly via stylesheet_link_tag in application.html.erb;
+   do not @import it here (Propshaft would resolve the path against the asset
+   tree, and a stale 'fonts/fonts.css' reference 404s). */
+
+:root {
+  /* ---------- Brand palette ---------- */
+  --ti-blue: #0127CE;            /* Primary — sampled from logo center */
+  --ti-blue-600: #021EA8;        /* Hover/pressed */
+  --ti-blue-700: #011880;
+  --ti-blue-500: #1F44DD;
+  --ti-blue-400: #4D6CE8;
+  --ti-blue-300: #8A9FF0;
+  --ti-blue-200: #C2CDF7;
+  --ti-blue-100: #E4EAFD;
+  --ti-blue-50:  #F2F5FE;
+
+  --ti-red: #FD2D0C;             /* Accent — torn-edge / border-flash color */
+  --ti-red-600: #D92006;
+  --ti-red-500: #FD4D2E;
+  --ti-red-100: #FFE2DC;
+  --ti-red-50:  #FFF1ED;
+
+  /* ---------- Neutrals (cool, trust-leaning) ---------- */
+  --ink-950: #06070D;
+  --ink-900: #0D1024;
+  --ink-800: #1A1E3B;
+  --ink-700: #2B3158;
+  --ink-600: #4A5079;
+  --ink-500: #6C7297;
+  --ink-400: #9197B7;
+  --ink-300: #B8BDD3;
+  --ink-200: #DADDEA;
+  --ink-100: #ECEEF5;
+  --ink-50:  #F6F7FB;
+  --paper:   #FAF7F2;            /* FIXED: warm paper, matching design references */
+
+  /* ---------- Semantic — foregrounds ---------- */
+  --fg-1: var(--ink-900);        /* primary text */
+  --fg-2: var(--ink-700);        /* secondary text */
+  --fg-3: var(--ink-500);        /* tertiary / meta */
+  --fg-4: var(--ink-400);        /* placeholder */
+  --fg-on-brand: #FFFFFF;        /* text on blue/red */
+  --fg-link: var(--ti-blue);
+
+  /* ---------- Semantic — backgrounds ---------- */
+  --bg-1: #FFFFFF;               /* primary surface (white cards/sections) */
+  --bg-2: var(--paper);          /* warm paper background */
+  --bg-3: var(--ink-100);        /* elevated card shade */
+  --bg-brand: var(--ti-blue);
+  --bg-brand-soft: var(--ti-blue-50);
+  --bg-dark: var(--ink-950);
+
+  /* ---------- Semantic — borders ---------- */
+  --border-1: var(--ink-200);
+  --border-2: var(--ink-100);
+  --border-strong: var(--ink-800);
+  --border-brand: var(--ti-blue);
+
+  /* ---------- Status ---------- */
+  --ok-600: #0E8F55;   --ok-100: #DCF5E8;
+  --warn-600: #B87A00; --warn-100: #FFF2CC;
+  --err-600: #D92006;  --err-100: #FFE2DC;
+  --info-600: var(--ti-blue); --info-100: var(--ti-blue-100);
+
+  /* ---------- Typography ----------
+     Base fonts defined here; overridden by fonts-upgrade.css for production.
+     Base: Open Sans (body + UI), Libre Baskerville (serif accent),
+     Montserrat (display/marketing hero), JetBrains Mono (code/metadata).
+     Production override: Inter Tight, Schibsted Grotesk, Fraunces, Instrument Serif. */
+  --font-sans: 'Open Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Libre Baskerville', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-display: 'Montserrat', 'Open Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* Weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  /* Type scale (1.250 major-third) */
+  --fs-display-xl: clamp(3.5rem, 5vw + 1rem, 5.75rem);
+  --fs-display-lg: clamp(2.75rem, 3.5vw + 1rem, 4.25rem);
+  --fs-display:    clamp(2.25rem, 2.5vw + 1rem, 3.25rem);
+  --fs-h1: 2.5rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.5rem;
+  --fs-h4: 1.25rem;
+  --fs-h5: 1.0625rem;
+  --fs-body-lg: 1.125rem;
+  --fs-body:    1rem;
+  --fs-body-sm: 0.9375rem;
+  --fs-caption: 0.8125rem;
+  --fs-micro:   0.6875rem;
+
+  --lh-tight: 1.08;
+  --lh-snug: 1.22;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.65;
+
+  --tracking-tight: -0.02em;
+  --tracking-snug:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-eyebrow: 0.14em;
+
+  /* ---------- Spacing (4pt base) ---------- */
+  --s-0: 0;    --s-1: 0.25rem; --s-2: 0.5rem;  --s-3: 0.75rem;
+  --s-4: 1rem; --s-5: 1.25rem; --s-6: 1.5rem;  --s-8: 2rem;
+  --s-10: 2.5rem; --s-12: 3rem; --s-16: 4rem;  --s-20: 5rem;
+  --s-24: 6rem;   --s-32: 8rem;
+
+  /* ---------- Radius ---------- */
+  --r-xs: 4px;  --r-sm: 6px;  --r-md: 10px; --r-lg: 14px;
+  --r-xl: 20px; --r-2xl: 28px; --r-pill: 999px;
+
+  /* ---------- Shadows ---------- */
+  --shadow-xs: 0 1px 2px rgba(13, 16, 36, 0.06);
+  --shadow-sm: 0 1px 3px rgba(13, 16, 36, 0.08), 0 1px 2px rgba(13, 16, 36, 0.04);
+  --shadow-md: 0 6px 16px -6px rgba(13, 16, 36, 0.12), 0 2px 6px rgba(13, 16, 36, 0.06);
+  --shadow-lg: 0 18px 40px -12px rgba(13, 16, 36, 0.18), 0 4px 10px rgba(13, 16, 36, 0.06);
+  --shadow-brand: 0 14px 36px -12px rgba(1, 39, 206, 0.45);
+  --shadow-inset: inset 0 0 0 1px rgba(13, 16, 36, 0.06);
+  --ring-focus: 0 0 0 3px rgba(1, 39, 206, 0.28);
+  --ring-danger: 0 0 0 3px rgba(253, 45, 12, 0.28);
+
+  /* ---------- Motion ---------- */
+  --ease-standard: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+}
+
+/* Base element styles */
+.ti-type, .ti-type * { box-sizing: border-box; }
+.ti-type {
+  font-family: var(--font-sans);
+  color: var(--fg-1);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+}
+.ti-type h1, .ti-h1 { font-family: var(--font-sans); font-weight: var(--fw-extrabold); font-size: var(--fs-h1); line-height: var(--lh-tight); letter-spacing: var(--tracking-tight); margin: 0; }
+.ti-type h2, .ti-h2 { font-family: var(--font-sans); font-weight: var(--fw-bold); font-size: var(--fs-h2); line-height: var(--lh-snug); letter-spacing: var(--tracking-snug); margin: 0; }
+.ti-type h3, .ti-h3 { font-weight: var(--fw-bold); font-size: var(--fs-h3); line-height: var(--lh-snug); letter-spacing: var(--tracking-snug); margin: 0; }
+.ti-type h4, .ti-h4 { font-weight: var(--fw-semibold); font-size: var(--fs-h4); line-height: var(--lh-snug); margin: 0; }
+.ti-type h5, .ti-h5 { font-weight: var(--fw-semibold); font-size: var(--fs-h5); line-height: var(--lh-normal); margin: 0; }
+.ti-type p, .ti-p { margin: 0; font-size: var(--fs-body); line-height: var(--lh-relaxed); color: var(--fg-2); text-wrap: pretty; }
+.ti-display-xl { font-family: var(--font-display); font-weight: 900; font-size: var(--fs-display-xl); line-height: var(--lh-tight); letter-spacing: -0.03em; }
+.ti-display-lg { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-display-lg); line-height: var(--lh-tight); letter-spacing: -0.025em; }
+.ti-display    { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-display);    line-height: var(--lh-tight); letter-spacing: -0.02em; }
+.ti-eyebrow { font-family: var(--font-sans); font-weight: var(--fw-bold); font-size: var(--fs-micro); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--ti-blue); }
+.ti-caption { font-size: var(--fs-caption); color: var(--fg-3); line-height: var(--lh-normal); }
+.ti-code, .ti-type code { font-family: var(--font-mono); font-size: 0.9em; background: var(--bg-3); padding: 0.1em 0.4em; border-radius: var(--r-xs); color: var(--ink-800); }
+.ti-serif, .ti-type .ti-serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
